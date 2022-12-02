@@ -43,17 +43,12 @@ fn main() {
     let input = include_str!("../input.txt");
     let  (mut score_p1, mut score_p2) = (0, 0);
 
-    // let mut p2_vec:Vec<Vec<(char, char)>> = vec![];
-
     for line in input.lines() {
         let mut parts = line.split_whitespace();
         let [(op, me)] = [(parts.next().unwrap().parse::<char>().unwrap(), 
                                     parts.next().unwrap().parse::<char>().unwrap())];
 
-        // P1
         score_p1 += score_card_p1(&[(op, me)]);
-
-        // P2
         score_p2 += score_card_p2(&[(op, me)]);
     }
 

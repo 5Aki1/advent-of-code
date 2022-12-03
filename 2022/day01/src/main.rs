@@ -6,7 +6,7 @@ fn main() {
         .map(|elf| {    // Assign each to elf
             elf.split('\n') // split elf calories by new line
                 .map(|food| food.parse::<u64>()
-                .expect("Could parse"))
+                .expect("Couldn't parse"))
                 .sum()
         })
         .sorted() // For getting top elves
